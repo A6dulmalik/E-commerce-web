@@ -49,10 +49,11 @@ const categories = [
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   //   const [filter, setFilter] = useState(products);
-  //   const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const getProducts = async () => {
     try {
+      setLoading(true);
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
 
