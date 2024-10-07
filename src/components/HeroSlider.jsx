@@ -33,9 +33,10 @@ const HeroSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => setCurrentIndex(currentIndex + 1) % heroInfo.length;
+  const previous = () => setCurrentIndex(currentIndex - 1) % heroInfo.length;
 
   return (
-    <div className="flex overflow-x-auto- relative group">
+    <div className="flex overflow-x-auto relative group">
       {heroInfo.map((info, index) => (
         <div
           key={index}
@@ -65,7 +66,10 @@ const HeroSlider = () => {
           <div className="w-1/2 h-full">
             <img src={iphoneImage} />
           </div>
-          <div className="hidden group-hover:block absolute top-52 left-10 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <div
+            className="hidden group-hover:block absolute top-52 left-10 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
+            onClick={previous}
+          >
             <BsChevronCompactLeft size={30} />
           </div>
           <div
