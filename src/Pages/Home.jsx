@@ -4,14 +4,10 @@ import ProductList from "../components/ProductList";
 
 const Home = () => {
   return (
-    <>
-      <div className="w-[88%] m-auto">
-        <Hero />
-        <div className="w-full">
-          <ProductList />
-        </div>
-      </div>
-    </>
+    <div className="w-[88%] m-auto">
+      <Hero />
+      <ProductList />
+    </div>
   );
 };
 
