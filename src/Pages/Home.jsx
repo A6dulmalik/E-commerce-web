@@ -1,12 +1,22 @@
 // import React from 'react'
+import BestSellingProducts from "../components/BestSellingProducts";
+import BrowseByCategory from "../components/BrowseByCategory";
+import FlashSales from "../components/FlashSales";
 import Hero from "../components/Hero";
-import ProductList from "../components/ProductList";
+import MusicExp from "../components/MusicExp";
+import ExplorePro from "../components/ExplorePro";
+// import ProductList from "../components/ProductList";
 
 const Home = () => {
   return (
-    <div className="w-[88%] m-auto">
+    <div className="">
       <Hero />
-      <ProductList />
+      <FlashSales />
+      <BrowseByCategory />
+      <BestSellingProducts />
+      <MusicExp />
+      <ExplorePro />
+      {/* <ProductList /> */}
     </div>
   );
 };

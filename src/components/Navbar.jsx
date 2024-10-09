@@ -2,14 +2,15 @@
 
 // import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { FaXmark, FaBars, FaHeart, FaCartShopping } from "react-icons/fa6";
+import { FaHeart, FaCartShopping } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
-const navigation = [
-  { name: "Home", href: "#" },
-  { name: "Contact", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Sign Up", href: "#" },
-];
+// const navigation = [
+//   { name: "Home", href: "#" },
+//   { name: "Contact", href: "#" },
+//   { name: "About", href: "#" },
+//   { name: "Sign Up", href: "#" },
+// ];
 const Navbar = () => {
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -44,10 +45,16 @@ const Navbar = () => {
 
           {/* NAVLINKS */}
           <div className="">
-            <a className="mx-5 ">Home</a>
-            <a className="mx-5">Contact</a>
-            <a className="mx-5">About</a>
-            <a className="mx-5">Sign Up</a>
+            <NavLink to="/home" className="mx-5 ">
+              Home
+            </NavLink>
+            <NavLink to="/contact" className="mx-5 cursor-pointer">
+              Contact
+            </NavLink>
+            <NavLink to="/about" className="mx-5 cursor-pointer">
+              About
+            </NavLink>
+            <NavLink className="mx-5 cursor-pointer">Sign Up</NavLink>
           </div>
 
           {/* SEARCH BAR */}
