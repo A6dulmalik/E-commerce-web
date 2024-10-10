@@ -8,6 +8,7 @@ import Products from "./Pages/Products";
 import Layout from "./Layout";
 import Item from "./Pages/Item";
 import ProductList from "./components/ProductList";
+import Cart from "./Pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,8 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        // index: true,
-        path: "/home",
+        index: true,
+        // path: "/home",
         element: <Home />,
       },
       {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

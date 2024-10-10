@@ -6,7 +6,7 @@ function Layout() {
   return (
     <>
       <Navbar />
-      <div className="w-[88%] m-auto">
+      <div className="md:w-[88%] w-full m-auto overflow-x-hidden">
         <Outlet />
       </div>
       <Footer />

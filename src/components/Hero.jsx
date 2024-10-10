@@ -19,11 +19,11 @@ const Hero = () => {
   return (
     <>
       {/* CATEGORY */}
-      <div className="flex justify-between h-max w-full">
+      <div className=" lg:flex justify-between h-max w-full ">
         <div>
-          <ul className="border-r w-56 pt-6 ">
+          <ul className="md:border-r lg:w-56 w-full pt-6 lg:block grid grid-cols-3 place-items-center">
             {categories.map((category, index) => (
-              <li className="pt-3 text-lg" key={index}>
+              <li className="pt-3 md:text-lg text-sm" key={index}>
                 {category}
               </li>
             ))}

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegHeart, FaStar } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
@@ -57,9 +58,12 @@ const ProductList = () => {
                   src={product.image}
                   className="h-36 w-full object-contain object-center mt-5"
                 />
-                <button className="absolute bottom-0 rounded-b-lg w-full bg-black  text-white text-center p-1 hidden group-hover:block">
+                <NavLink
+                  to={`/item/${product.id}`}
+                  className="absolute bottom-0 rounded-b-lg w-full bg-black  text-white text-center p-1 hidden group-hover:block"
+                >
                   Add To Cart
-                </button>
+                </NavLink>
               </div>
               <h3 className="mt-4 text-base font-semibold text-gray-900">
                 <a href={product.href}>

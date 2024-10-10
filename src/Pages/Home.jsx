@@ -9,7 +9,7 @@ import ExplorePro from "../components/ExplorePro";
 
 const Home = () => {
   return (
-    <div className="">
+    <div className="mt-28">
       <Hero />
       <FlashSales />
       <BrowseByCategory />
