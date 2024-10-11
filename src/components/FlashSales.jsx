@@ -35,7 +35,7 @@ function FlashSales() {
     <>
       {/* FLASH SALES */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 border-b font-inter">
-        {/* SALES INFO AND NAVIGATION ARROW */}
+        {/* SALES INFO AND NAVIGATION ARROWS */}
         <div className="sm:flex sm:items-baseline sm:justify-between">
           <div>
             <div className="flex items-center gap-2 mb-3">
@@ -47,32 +47,37 @@ function FlashSales() {
               Flash Sales
             </h2>
           </div>
+          {/* Arrows for larger screens */}
           <div className="flex gap-5">
-            <div className="hidden text-xl font-semibold bg-gray-100 p-2 rounded-full text-black hover:text-slate-500 sm:block">
+            <div className="hidden sm:flex text-xl font-semibold bg-gray-100 p-2 rounded-full text-black hover:text-slate-500">
               <FaArrowLeft />
             </div>
-            <div className="hidden text-xl font-semibold bg-gray-100 p-2 rounded-full text-black hover:text-slate-500 sm:block">
+            <div className="hidden sm:flex text-xl font-semibold bg-gray-100 p-2 rounded-full text-black hover:text-slate-500">
               <FaArrowRight />
             </div>
           </div>
         </div>
+
         {/* PRODUCTS LIST */}
-        <div className="mt-5 grid grid-flow-col gap-4 max-w-full overflow-x-auto">
+        <div className="mt-5 grid grid-flow-col gap-4 max-w-full overflow-x-auto scroll-smooth">
           {products.map((product) => (
-            <div key={product.id} className=" w-[200px] h-[300px] ">
+            <div
+              key={product.id}
+              className="w-[160px] sm:w-[180px] md:w-[200px] h-[320px] lg:h-[350px] p-2 flex-shrink-0"
+            >
               <div className="relative group h-48 w-full border rounded-lg">
                 <div className="absolute right-3 top-3 bg-gray-200 rounded-xl p-1">
-                  <FaRegHeart className=" " />
+                  <FaRegHeart />
                 </div>
                 <div className="absolute right-3 top-10 bg-gray-200 rounded-xl p-1">
-                  <FaRegEye className="  " />
+                  <FaRegEye />
                 </div>
                 <img
-                  alt={product.title.substring(0)}
+                  alt={product.title}
                   src={product.image}
                   className="h-36 w-full object-contain object-center mt-5"
                 />
-                <button className="absolute bottom-0 rounded-b-lg w-full bg-black  text-white text-center p-1 hidden group-hover:block">
+                <button className="absolute bottom-0 rounded-b-lg w-full bg-black text-white text-center p-1 hidden group-hover:block">
                   Add To Cart
                 </button>
               </div>
@@ -86,25 +91,24 @@ function FlashSales() {
               <div className="flex items-center">
                 {[0, 1, 2, 3, 4].map((rating, index) => (
                   <FaStar
+                    key={index}
                     fill={
                       product.rating.rate > rating ? "#FFAD33" : "lightgray"
                     }
-                    key={index}
-                    aria-hidden="true"
-                    className="h-4 w-4 flex-shrink-0 "
+                    className="h-4 w-4 flex-shrink-0"
                   />
                 ))}
-                <p className=" ml-3">({product.rating.rate})</p>
+                <p className="ml-3">({product.rating.rate})</p>
               </div>
             </div>
           ))}
         </div>
-        {/* View products */}
+
+        {/* View Products Button */}
         <div className="text-center w-full mt-12">
           <NavLink
             to="/products"
-            type="button"
-            className="rounded-sm bg-[#DB4444] hover:bg-[#da5a5a] px-10 py-3 text-sm  text-white shadow-md  hover:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="rounded-sm bg-[#DB4444] hover:bg-[#da5a5a] px-10 py-3 text-sm text-white shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             View All Products
           </NavLink>
