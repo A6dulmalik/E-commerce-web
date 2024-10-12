@@ -18,13 +18,15 @@ function NewArrival() {
             New Arrival
           </h2>
         </div>
-        <div className="flex justify-between">
-          <img src={ps5} />
-          <div className="flex flex-col justify-between">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <img src={ps5} />
+          </div>
+          <div className="grid gap-4">
             <img src={wCollection} />
-            <div className="flex justify-between">
-              <img src={speakers} />
-              <img src={perfume} />
+            <div className="grid sm:grid-cols-2 gap-4 w-full">
+              <img src={speakers} width={360} />
+              <img src={perfume} width={360} />
             </div>
           </div>
         </div>

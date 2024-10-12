@@ -31,7 +31,7 @@ function BestSellingProducts() {
   return (
     <div>
       {/* BEST SELLING PRODUCTS */}
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 border-b font-inter">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6  lg:px-8 border-b font-inter">
         <div className="sm:flex sm:items-baseline sm:justify-between">
           <div>
             <div className="flex items-center gap-2 mb-3">
@@ -45,7 +45,7 @@ function BestSellingProducts() {
           </div>
           <button
             type="button"
-            className="rounded-sm bg-[#DB4444] hover:bg-[#da5a5a] px-10 py-2 text-sm  text-white shadow-md  hover:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="mt-4 sm:mt-0 rounded-sm bg-[#DB4444] hover:bg-[#da5a5a] px-8 py-2 text-sm text-white shadow-md focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             View All
           </button>
@@ -53,8 +53,8 @@ function BestSellingProducts() {
         {/* Product List */}
         <div className="mt-5 grid grid-flow-col gap-5 max-w-full overflow-x-auto h-full w-full">
           {bestSelling.map((best, index) => (
-            <div key={index} className=" w-full h- ">
-              <div className="relative group border rounded-lg w-[250px]">
+            <div key={index} className=" w-full h-[324px] ">
+              <div className="relative group border rounded-lg lg:w-[248px]">
                 <div className="absolute right-3 top-3 bg-gray-200 rounded-xl p-1">
                   <FaRegHeart className=" " />
                 </div>

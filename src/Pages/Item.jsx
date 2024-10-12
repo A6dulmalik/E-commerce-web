@@ -48,8 +48,8 @@ function Item() {
   return (
     <>
       {/* Image gallery */}
-      <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 font-inter my-20">
-        <TabGroup className="flex flex-row border">
+      <div className="lg:grid lg:grid-cols-2  lg:gap-x-8 font-inter mt-36">
+        <TabGroup className="flex flex-row">
           {/* Image selector */}
           <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
             <TabList className="grid grid-cols-4 gap-6">
@@ -62,7 +62,7 @@ function Item() {
                   <img
                     alt=""
                     src={products.image}
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-1/2 object-cover object-center"
                   />
                 </span>
                 <span
@@ -70,14 +70,16 @@ function Item() {
                   className="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 group-data-[selected]:ring-indigo-500"
                 />
               </Tab>
-
-              <Tab className="group relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4">
+              <Tab
+                //   key={index}
+                className="group relative flex flex-col h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
+              >
                 <span className="sr-only">{products.image}</span>
                 <span className="absolute inset-0 overflow-hidden rounded-md">
                   <img
                     alt=""
                     src={products.image}
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-1/2 object-cover object-center"
                   />
                 </span>
                 <span
@@ -93,15 +95,15 @@ function Item() {
               <img
                 alt={products.title}
                 src={products.image}
-                className="h-full w-full object-cover object-center sm:rounded-lg"
+                className="h-full w-1/3 object-cover object-center sm:rounded-lg"
               />
             </TabPanel>
           </TabPanels>
         </TabGroup>
 
         {/* PRODUCT INFO / OPTIONS */}
-        <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0 border">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+        <div className="mt-10 px-4 sm:mt-16 sm:px-4 lg:mt-0 border">
+          <h1 className="text-xl font-bold tracking-tight text-gray-900">
             {products.title}
           </h1>
 
@@ -129,7 +131,7 @@ function Item() {
             {/* Product Price */}
             <div className="mt-3">
               <h2 className="sr-only">Product information</h2>
-              <p className="text-3xl tracking-tight text-gray-900">
+              <p className="text-xl font-semibold tracking-tight text-gray-900">
                 ${products.price}
               </p>
             </div>

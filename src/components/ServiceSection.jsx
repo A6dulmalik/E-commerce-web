@@ -5,7 +5,7 @@ function ServiceSection() {
   return (
     <>
       {/* DELIVERY CUSTOMER AND GUARANTEE SECTION*/}
-      <div className="flex justify-evenly items-center my-28">
+      <div className="flex sm:flex-row flex-col text-center sm:text-base justify-evenly items-center font-inter mt-20 mb-10">
         {/* Delivery */}
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center rounded-3xl w-12 h-12 bg-slate-400">
