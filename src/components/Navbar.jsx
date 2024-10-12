@@ -98,7 +98,9 @@ const Navbar = ({ wishlist }) => {
                   </span>
                 )}
               </NavLink>
-              <FaCartShopping />
+              <NavLink to="/cart">
+                <FaCartShopping />
+              </NavLink>
               <div className="md:hidden" onClick={toggleMenu}>
                 <FaBars />
               </div>

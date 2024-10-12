@@ -6,6 +6,8 @@ import FlashSales from "../components/FlashSales";
 import Hero from "../components/Hero";
 import MusicExp from "../components/MusicExp";
 import ExplorePro from "../components/ExplorePro";
+import NewArrival from "../components/NewArrival";
+import ServiceSection from "../components/ServiceSection";
 // import ProductList from "../components/ProductList";
 
 const Home = ({ wishlist, handleWishlist }) => {
@@ -17,6 +19,8 @@ const Home = ({ wishlist, handleWishlist }) => {
       <BestSellingProducts />
       <MusicExp />
       <ExplorePro />
+      <NewArrival />
+      <ServiceSection />
       {/* <ProductList /> */}
     </div>
   );

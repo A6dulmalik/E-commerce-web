@@ -55,7 +55,7 @@ function Footer() {
                     autoComplete="email"
                     className="relative w-full min-w-0 appearance-none rounded-md border-0 bg-white/5 px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
                   />
-                  <RxPaperPlane className="absolute text-white translate-x-[9.5rem] -translate-y-[1.6rem]" />
+                  <RxPaperPlane className="absolute text-white translate-x-[15em]  sm:translate-x-[9.5rem] -translate-y-[1.6rem]" />
                 </div>
               </form>
             </div>
@@ -117,7 +117,7 @@ function Footer() {
               </div>
             </div>
             <div>
-              <p className="text-xl">Download App</p>
+              <p className="text-xl text-white">Download App</p>
               <p className="text-sm text-gray-400">
                 Save S3 with App New User Only
               </p>
