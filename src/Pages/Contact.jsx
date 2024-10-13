@@ -55,14 +55,14 @@ function Contact() {
         <textarea
           id="message"
           name="message"
-          rows={12}
+          rows={6}
           className="block w-full rounded-md border-none outline-none px-3.5 py-2 bg-[#F5F5F5] text-gray-900 shadow-sm placeholder:text-gray-400"
           defaultValue={""}
         />
         {/* Button */}
         <button
           type="submit"
-          className="px-5 py-2 mt-5 bg-[#DB4444] text-center text-white text-xs sm:text-sm rounded float-right"
+          className="px-5 py-2 mt-8 bg-[#DB4444] text-center text-white text-sm rounded float-right"
         >
           Send Message
         </button>
