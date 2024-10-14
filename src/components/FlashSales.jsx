@@ -77,7 +77,7 @@ function FlashSales() {
                 <img
                   alt={product.title}
                   src={product.image}
-                  className="h-36 w-full object-contain object-center mt-5 p-2"
+                  className="h-36 w-full object-contain object-center mt-5 sm:p-2 p-5"
                 />
                 <button
                   className="absolute bottom-0 rounded-b-lg w-full bg-black text-white text-center p-1 hidden group-hover:block"

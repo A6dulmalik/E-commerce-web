@@ -42,9 +42,9 @@ const ProductList = () => {
             return (
               <div
                 key={product.id}
-                className="sm:w-[200px] w-[160px] sm:h-[300px]"
+                className="sm:w-[200px] md:w-[160px] sm:h-[300px] w-full flex gap-4 sm:block mt-20"
               >
-                <div className="relative group h-48 w-full border rounded-lg">
+                <div className="relative group sm:h-48 sm:w-full w-32 border rounded-lg">
                   <button
                     className="absolute right-3 top-3 rounded-xl p-1"
                     onClick={() => handleWishlist(product)} // Pass the entire product, not just the ID
@@ -57,14 +57,14 @@ const ProductList = () => {
                     )}
                   </button>
 
-                  <div className="absolute right-3 top-10 bg-gray-200 rounded-xl p-1">
+                  <div className="absolute right-3 top-10 rounded-xl p-1">
                     <FaRegEye />
                   </div>
 
                   <img
                     alt={product.title}
                     src={product.image}
-                    className="h-36 w-full object-contain object-center mt-5"
+                    className="h-20 sm:h-36 sm:w-full m-auto object-contain object-center mt-5 p-1"
                   />
 
                   <NavLink
@@ -74,6 +74,7 @@ const ProductList = () => {
                     View Details
                   </NavLink>
                 </div>
+
                 <div className="">
                   <h3 className="mt-4 text-base font-semibold text-gray-900">
                     {product.title.substring(0, 12)}

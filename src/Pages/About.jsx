@@ -39,7 +39,7 @@ const teams = [
 
 function About() {
   return (
-    <div className="mx-auto max-w-7xl px-4 mt-40 font-inter">
+    <div className="mx-auto max-w-7xl px-4 mt-48 sm:40 font-inter">
       {/* Our Story Section */}
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8 ">
         {/* // <div className="flex items-center font-inter mt-36"> */}

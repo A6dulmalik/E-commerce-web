@@ -3,8 +3,8 @@
 export const SignUp = () => {
   return (
     <>
-      <div className="mt-36 mx-auto max-w-7xl font-inter flex justify-between">
-        <div className="">
+      <div className="mt-48 sm:36 mx-auto max-w-7xl font-inter flex sm:flex-row flex-col justify-between">
+        <div className="text-center">
           <div>
             <p className="font-semibold text-lg">Manage My Account</p>
             <ul className="text-slate-600 mt-4">
@@ -31,7 +31,7 @@ export const SignUp = () => {
         </div>
 
         {/* Profile form */}
-        <div className="shadow-lg w-3/4 py-8 px-16">
+        <div className="shadow-lg sm:w-3/4 w-full py-8 px-16">
           <h1 className="mb-4 text-lg text-[#DB4444] font-semibold">
             Edit Your Profile
           </h1>
@@ -91,7 +91,7 @@ export const SignUp = () => {
           {/* Cancel and Save button */}
           <div className="flex items-center justify-end gap-5">
             <button className="text-sm">Cancel</button>
-            <button className="rounded bg-[#DB4444] py-2 px-8 text-sm text-white text-center">
+            <button className="rounded bg-[#DB4444] sm:py-2 py-1 sm:px-8 px-2 sm:text-sm text-xs text-white text-center">
               Save Changes
             </button>
           </div>

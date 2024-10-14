@@ -64,9 +64,9 @@ const Navbar = () => {
 
           {/* NAVLINKS */}
           <div
-            className={`fixed inset-0 flex flex-col md:items-center justify-center space-y-2 transform bg-white ${
+            className={`fixed inset-0.5 flex flex-col md:items-center justify-center space-y-2 transform bg-white ${
               isOpen
-                ? "translate-x-0 z-50 my-5 text-right"
+                ? "translate-x-0 z-50 -top-20 text-right"
                 : "-translate-x-full"
             } transition-transform duration-300 ease-linear-in-out md:static md:flex md:flex-row md:space-y-0 space-y-6 md:space-x-6 md:transform-none`}
           >
@@ -78,7 +78,12 @@ const Navbar = () => {
             </div>
 
             {navigation.map((nav, index) => (
-              <NavLink key={index} to={nav.href} className="mx-5">
+              <NavLink
+                key={index}
+                to={nav.href}
+                onClick={toggleMenu}
+                className="mx-5"
+              >
                 {nav.name}
               </NavLink>
             ))}
