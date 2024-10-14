@@ -1,6 +1,9 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+import { useContext } from "react";
+import AppContext from "../components/Context/AppContext";
 
-function WishList({ wishlist }) {
+function WishList() {
+  const { wishlist } = useContext(AppContext);
   return (
     <div className="p-4 sm:p-6 lg:p-10 mt-20 sm:mt-28 lg:mt-40">
       <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">
@@ -29,9 +32,9 @@ function WishList({ wishlist }) {
   );
 }
 
-WishList.propTypes = {
-  wishlist: PropTypes.array.isRequired,
-  handleWishlist: PropTypes.func.isRequired,
-};
+// WishList.propTypes = {
+//   wishlist: PropTypes.array.isRequired,
+//   handleWishlist: PropTypes.func.isRequired,
+// };
 
 export default WishList;

@@ -54,17 +54,17 @@ function BestSellingProducts() {
         <div className="mt-5 grid grid-flow-col gap-5 max-w-full overflow-x-auto h-full w-full">
           {bestSelling.map((best, index) => (
             <div key={index} className=" w-full h-[324px] ">
-              <div className="relative group border rounded-lg lg:w-[248px]">
-                <div className="absolute right-3 top-3 bg-gray-200 rounded-xl p-1">
+              <div className="relative group border rounded-lg lg:w-[184px] h-44">
+                <div className="absolute right-3 top-3 rounded-xl p-1">
                   <FaRegHeart className=" " />
                 </div>
-                <div className="absolute right-3 top-10 bg-gray-200 rounded-xl p-1">
+                <div className="absolute right-3 top-10 rounded-xl p-1">
                   <FaRegEye className="  " />
                 </div>
                 <img
-                  alt={best.title.substring(0)}
+                  alt={best.title}
                   src={best.image}
-                  className="h-40 w-full object-contain object-center mt-5 p-2"
+                  className="h-36 w-full object-contain object-center mt-5 p-3"
                 />
                 <button className="absolute bottom-0 rounded-b-lg w-full bg-black  text-white text-center p-1 hidden group-hover:block">
                   Add To Cart

@@ -1,8 +1,11 @@
 // import React from "react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaRegEye, FaRegHeart, FaStar } from "react-icons/fa";
+import AppContext from "./Context/AppContext";
 
 function ExplorePro() {
+  const { addToCart, handleWishlist } = useContext(AppContext);
+
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -53,18 +56,24 @@ function ExplorePro() {
               className="w-[160px] sm:w-[180px] md:w-[200px] h-[320px] lg:h-[350px] p-2 flex-shrink-0"
             >
               <div className="relative group h-48 w-full border rounded-lg">
-                <div className="absolute right-3 top-3 bg-gray-200 rounded-xl p-1">
+                <div
+                  className="absolute right-3 top-3  rounded-xl p-1"
+                  // onClick={() => handleWishlist()}
+                >
                   <FaRegHeart />
                 </div>
-                <div className="absolute right-3 top-10 bg-gray-200 rounded-xl p-1">
+                <div className="absolute right-3 top-10  rounded-xl p-1">
                   <FaRegEye />
                 </div>
                 <img
                   alt={product.title}
                   src={product.image}
-                  className="h-36 w-full object-contain object-center mt-5"
+                  className="h-36 w-full m-auto object-contain object-center mt-5 p-6"
                 />
-                <button className="absolute bottom-0 rounded-b-lg w-full bg-black text-white text-center p-1 hidden group-hover:block">
+                <button
+                  className="absolute bottom-0 rounded-b-lg w-full bg-black text-white text-center p-1 md:hidden block md:group-hover:block"
+                  onClick={() => addToCart(product)}
+                >
                   Add To Cart
                 </button>
               </div>

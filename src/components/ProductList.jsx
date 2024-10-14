@@ -1,10 +1,12 @@
-import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+// import PropTypes from "prop-types";
+import { useState, useEffect, useContext } from "react";
 import { FaHeart, FaRegEye } from "react-icons/fa";
 import { FaRegHeart, FaStar } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import AppContext from "./Context/AppContext";
 
-const ProductList = ({ wishlist, handleWishlist }) => {
+const ProductList = () => {
+  const { wishlist, handleWishlist } = useContext(AppContext);
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
 
@@ -101,8 +103,8 @@ const ProductList = ({ wishlist, handleWishlist }) => {
   );
 };
 
-ProductList.propTypes = {
-  wishlist: PropTypes.array.isRequired,
-  handleWishlist: PropTypes.func.isRequired,
-};
+// ProductList.propTypes = {
+//   wishlist: PropTypes.array.isRequired,
+//   handleWishlist: PropTypes.func.isRequired,
+// };
 export default ProductList;

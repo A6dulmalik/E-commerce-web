@@ -1,3 +1,4 @@
+import { AppProvider } from "./components/Context/AppContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
@@ -8,50 +9,19 @@ import Layout from "./Layout";
 import Item from "./Pages/Item";
 import Cart from "./Pages/Cart";
 import WishList from "./Pages/WishList";
-import { useState } from "react";
+import CheckOut from "./Pages/CheckOut";
+import { SignUp } from "./Pages/SignUp";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
-  const [wishlist, setWishlist] = useState([]);
-
-  const handleWishlist = (product) => {
-    setWishlist((prevWishlist) => {
-      // Check if the product already exists in the wishlist
-      const isInWishlist = prevWishlist.some((item) => item.id === product.id);
-
-      // Only add the product if it's not already in the wishlist
-      if (!isInWishlist) {
-        return [...prevWishlist, product]; // Add product to wishlist
-      }
-
-      // If the product is already in the wishlist, return the list as is
-      return prevWishlist;
-    });
-  };
-
-  // const handleWishlist = (product) => {
-  //   setWishlist((prevWishlist) => {
-  //     return [...prevWishlist, product]; // Add product
-  //   });
-  // };
-
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout wishlist={wishlist} handleWishlist={handleWishlist} />,
+      element: <Layout />,
       children: [
         {
           index: true,
-          element: <Home wishlist={wishlist} handleWishlist={handleWishlist} />,
-        },
-        {
-          path: "/products",
-          element: (
-            <Products wishlist={wishlist} handleWishlist={handleWishlist} />
-          ),
-        },
-        {
-          path: "/item/:id",
-          element: <Item wishlist={wishlist} handleWishlist={handleWishlist} />,
+          element: <Home />,
         },
         {
           path: "/contact",
@@ -62,14 +32,38 @@ function App() {
           element: <About />,
         },
         {
+          path: "/signup",
+          element: <SignUp />,
+        },
+        {
+          path: "/products",
+          element: <Products />,
+        },
+        {
+          path: "/item/:id",
+          element: <Item />,
+        },
+        {
           path: "/cart",
           element: <Cart />,
+          children: [
+            {
+              path: "checkout",
+              element: <CheckOut />,
+            },
+          ],
+        },
+        {
+          path: "/checkout",
+          element: <CheckOut />,
         },
         {
           path: "/wishlist",
-          element: (
-            <WishList wishlist={wishlist} handleWishlist={handleWishlist} />
-          ), // Pass wishlist here
+          element: <WishList />,
+        },
+        {
+          path: "*",
+          element: <NotFoundPage />,
         },
       ],
     },
@@ -77,7 +71,9 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      <AppProvider>
+        <RouterProvider router={router} />
+      </AppProvider>
     </>
   );
 }

@@ -1,9 +1,13 @@
 // import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
-import { FaArrowLeft, FaBars, FaSearch, FaTimes } from "react-icons/fa";
-import { FaHeart, FaCartShopping } from "react-icons/fa6";
+import { useContext, useState } from "react";
+import { FaArrowLeft, FaBars, FaTimes } from "react-icons/fa";
+// import { SiPantheon } from "react-icons/si";
 import { NavLink, useNavigate } from "react-router-dom";
+import AppContext from "./Context/AppContext";
+import { IoIosSearch } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
+import { BsCart3 } from "react-icons/bs";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -11,7 +15,8 @@ const navigation = [
   { name: "About", href: "/about" },
   { name: "Sign Up", href: "/signup" },
 ];
-const Navbar = ({ wishlist }) => {
+const Navbar = () => {
+  const { wishlist, cart } = useContext(AppContext);
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,10 +33,10 @@ const Navbar = ({ wishlist }) => {
     <>
       <div className="fixed z-50 shadow-md w-full">
         {/* SALES BANNER */}
-
+        <div className="w-full h-5 bg-white"></div>
         <div className="flex items-center justify-center w-full bg-black text-white text-xs md:text-base px-4">
-          <div className=" md:text-left py-[4px]">
-            <p className="md:pr-4 md:max-w-2xl max-w-md text-xs md:text-base">
+          <div className=" md:text-left py-[4px] text-xs">
+            <p className="md:pr-4 md:max-w-2xl max-w-md ">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!{" "}
               <span className="ml-2 font-bold underline cursor-pointer">
@@ -60,10 +65,15 @@ const Navbar = ({ wishlist }) => {
           {/* NAVLINKS */}
           <div
             className={`fixed inset-0 flex flex-col md:items-center justify-center space-y-2 transform bg-white ${
-              isOpen ? "translate-y-0" : "-translate-y-full"
-            } transition-transform duration-300 ease-in-out md:static md:flex md:flex-row md:space-y-0 md:space-x-6 md:transform-none`}
+              isOpen
+                ? "translate-x-0 z-50 my-5 text-right"
+                : "-translate-x-full"
+            } transition-transform duration-300 ease-linear-in-out md:static md:flex md:flex-row md:space-y-0 space-y-6 md:space-x-6 md:transform-none`}
           >
-            <div className="md:hidden block" onClick={toggleMenu}>
+            <div
+              className="md:hidden absolute right-6 top-28"
+              onClick={toggleMenu}
+            >
               {isOpen && <FaTimes />}
             </div>
 
@@ -81,25 +91,30 @@ const Navbar = ({ wishlist }) => {
                 id="search"
                 name="search"
                 type="text"
-                placeholder="what are you looking for?"
+                placeholder="What are you looking for?"
                 className="block outline-none py-1.5 pr-2 md:pr-14 text-gray-900 shadow-sm placeholder:text-gray-400 placeholder:text-xs placeholder:px-2 sm:text-sm sm:leading-6 md:w-full w-40"
               />
               <div className="px-1">
-                <FaSearch className="" />
+                <IoIosSearch className="" />
                 {/* <span>{wishlist}</span> */}
               </div>
             </div>
             <div className="flex md:gap-4 gap-2">
               <NavLink to="/wishlist" className="relative">
-                <FaHeart />
+                <CiHeart fontSize={20} />
                 {wishlist.length > 0 && (
-                  <span className="absolute -top-2 -right-2 text-xs bg-red-500 text-white rounded-full px-2">
+                  <span className="absolute lg:-top-1 md:-top-1.5 top-0.5 lg:-right-2 md:-right-1 right-0 text-xs bg-red-500 text-white rounded-full px-1">
                     {wishlist.length}
                   </span>
                 )}
               </NavLink>
               <NavLink to="/cart">
-                <FaCartShopping />
+                <BsCart3 fontSize={20} />
+                {cart.length > 0 && (
+                  <span className="absolute md:top-20 top-[9rem] lg:right-[4.6rem] md:right-[.2rem] right-8 text-xs bg-red-500 text-white rounded-full px-1">
+                    {cart.length}
+                  </span>
+                )}
               </NavLink>
               <div className="md:hidden" onClick={toggleMenu}>
                 <FaBars />
@@ -114,6 +129,7 @@ const Navbar = ({ wishlist }) => {
 
 Navbar.propTypes = {
   wishlist: PropTypes.array.isRequired,
+  cart: PropTypes.array.isRequired,
   handleWishlist: PropTypes.func.isRequired,
 };
 export default Navbar;
