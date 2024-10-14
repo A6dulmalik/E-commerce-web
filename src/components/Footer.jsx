@@ -27,7 +27,7 @@ const navigation = {
 function Footer() {
   return (
     <>
-      <footer aria-labelledby="footer-heading" className="bg-black">
+      <footer aria-labelledby="footer-heading" className="bg-black w-full">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>

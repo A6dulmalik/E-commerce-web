@@ -16,13 +16,13 @@ function BrowseByCategory() {
   return (
     <>
       {/* CATEGORY SECTION */}
-      <div className="my-8 md:my-[5px] lg-2">
+      <div className="my-8 md:my-12 lg-2">
         {/* SALES INFO AND NAVIGATION ARROW */}
         <div className="sm:flex sm:items-baseline sm:justify-between ">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <div className="h-8 w-3 bg-[#DB4444] rounded-sm " />
-              <p className="text-sm text-[#DB4444] font-semibold">This Month</p>
+              <p className="text-sm text-[#DB4444] font-semibold">Categories</p>
             </div>
 
             <h2 className="text-2xl font-semibold tracking-tight  text-gray-900">
@@ -38,7 +38,7 @@ function BrowseByCategory() {
             </div>
           </div> */}
         </div>
-        <div className="grid items-center justify-center grid-cols-2 md:grid-cols-3 lg:grid-cols-6 md:gap-3 my-8">
+        <div className="grid items-center justify-center grid-cols-2 md:grid-cols-3 lg:grid-cols-6 md:gap-3 my-">
           {categories.map((category, index) => (
             <div
               key={index}

@@ -18,12 +18,12 @@ const Hero = () => {
   return (
     <>
       {/* CATEGORY */}
-      <div className=" lg:flex justify-between h-max w-full mt-20 font-inter">
-        <div>
-          <ul className="md:border-r lg:w-56 w-full pt-6 lg:block grid grid-cols-3 place-items-start  ">
+      <div className="lg:flex items-center w-full font-inter">
+        <div className="">
+          <ul className="md:border-r lg:w-56 w-full lg:block grid grid-cols-3 place-items-start  ">
             {categories.map((category, index) => (
               <li
-                className="max-w-lg text-center md:text-lg text-xs font-[500] hover:bg-black bg-[#DB4444] px-[5px] py-[6px] m-2 rounded-md text-slate-200"
+                className="max-w-lg md:text-base md:mt-4 text-xs font-[500] m-2  rounded-md "
                 key={index}
               >
                 {category}
