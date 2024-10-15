@@ -116,7 +116,7 @@ const Navbar = () => {
               <NavLink to="/cart">
                 <BsCart3 fontSize={20} />
                 {cart.length > 0 && (
-                  <span className="absolute md:top-20 top-[9rem] lg:right-[4.6rem] md:right-[.2rem] right-8 text-xs bg-red-500 text-white rounded-full px-1">
+                  <span className="absolute md:top-20 top-[4rem] lg:right-[4.6rem] md:right-[.2rem] right-8 text-xs bg-red-500 text-white rounded-full px-1">
                     {cart.length}
                   </span>
                 )}

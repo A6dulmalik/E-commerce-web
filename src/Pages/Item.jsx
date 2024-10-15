@@ -49,10 +49,10 @@ function Item() {
     <>
       {/* Image gallery */}
       <div className="lg:grid lg:grid-cols-2  lg:gap-x-8 font-inter mt-36">
-        <TabGroup className="flex flex-row">
+        <TabGroup className="grid grid-cols-2">
           {/* Image selector */}
           <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-            <TabList className="grid grid-cols-4 gap-6">
+            <TabList className="grid grid-rows-4 gap-6">
               <Tab
                 //   key={index}
                 className="group relative flex flex-col h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
@@ -232,22 +232,28 @@ function Item() {
           </div>
 
           {/* Delivery and Return Info */}
-          <div className="w-[578px] h-48 border rounded border-black mt-11 ">
+          <div className="sm:w-[578px] h-48 border rounded border-black mt-11 font-inter">
             {/* free delivery */}
             <div className="flex justify-start items-center gap-8 h-1/2 border-b border-black px-8">
-              <TbTruckDelivery fontSize="60px" />
+              <TbTruckDelivery className="text-7xl sm:text-[60px]" />
               <div className="">
-                <p className="font-bold mb-2">Free Delivery</p>
-                <p>Enter your postal code for Delivery Availability</p>
+                <p className="font-bold mb-2 sm:text-base text-sm">
+                  Free Delivery
+                </p>
+                <p className="sm:text-base text-xs">
+                  Enter your postal code for Delivery Availability
+                </p>
               </div>
             </div>
 
             {/* Return Delivery */}
             <div className="flex justify-start items-center gap-8 mt-8 mx-8">
-              <FaRotate fontSize="50px" />
+              <FaRotate className="text-5xl sm:text-[60px]" />
               <div className="">
-                <p className="font-bold mb-2">Return Delivery</p>
-                <p>
+                <p className="font-bold mb-2 sm:text-base text-sm">
+                  Return Delivery
+                </p>
+                <p className="sm:text-base text-xs">
                   Free 30 Days Delivery Returns. <span>Details</span>
                 </p>
               </div>

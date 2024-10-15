@@ -20,7 +20,7 @@ const Hero = () => {
       {/* CATEGORY */}
       <div className="lg:flex items-center w-full font-inter mt-36 sm:mt-20 lg:mt-0">
         <div className="">
-          <ul className="lg:border-r lg:w-56 w-full lg:block grid grid-cols-3 place-items-start  ">
+          <ul className="lg:border-r lg:w-56 w-full m-auto lg:block grid grid-cols-3 place-items-start  ">
             {categories.map((category, index) => (
               <li
                 className="max-w-lg md:text-base md:mt-4 text-xs font-[500] m-2  rounded-md "

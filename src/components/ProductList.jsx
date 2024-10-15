@@ -30,7 +30,7 @@ const ProductList = () => {
 
   return (
     <div className="bg-white w-full">
-      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-4 place-items-center max-w-full">
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 place-items-center max-w-full">
         {loading ? (
           <p>LOADING...</p>
         ) : (
@@ -46,7 +46,7 @@ const ProductList = () => {
               >
                 <div className="relative group sm:h-48 sm:w-full w-32 border rounded-lg">
                   <button
-                    className="absolute right-3 top-3 rounded-xl p-1"
+                    className="absolute right-1 sm:right-3 top-3 rounded-xl p-1"
                     onClick={() => handleWishlist(product)} // Pass the entire product, not just the ID
                   >
                     {/* Check if the specific product is in the wishlist */}
@@ -57,14 +57,14 @@ const ProductList = () => {
                     )}
                   </button>
 
-                  <div className="absolute right-3 top-10 rounded-xl p-1">
+                  <div className="absolute sm:right-3 right-1 top-10 rounded-xl p-1">
                     <FaRegEye />
                   </div>
 
                   <img
                     alt={product.title}
                     src={product.image}
-                    className="h-20 sm:h-36 sm:w-full m-auto object-contain object-center mt-5 p-1"
+                    className="h-20 sm:h-36 sm:w-full w-1/2 m-auto object-contain object-center mt-5 p-"
                   />
 
                   <NavLink

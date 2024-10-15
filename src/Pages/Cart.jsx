@@ -29,7 +29,7 @@ function Cart() {
 
   return (
     <>
-      <div className="w-full my-5 font-inter text-sm sm:text-base font-normal mt-36 mx-auto max-w-7xl px-4">
+      <div className="w-full my-5 font-inter text-sm sm:text-base font-normal mt-48 mx-auto max-w-7xl px-4">
         {/* Heading */}
 
         <div className="mt-38 flow-root">
@@ -77,28 +77,28 @@ function Cart() {
                                 <img
                                   alt=""
                                   src={item.image}
-                                  className="h-8 w-11"
+                                  className="h-10 w-11"
                                 />
                                 <span className="sm:text-base text-xs">
-                                  {item.title.substring(0, 12)}
+                                  {item.title.substring(0, 5)}
                                 </span>
                               </div>
                             </div>
                           </td>
                           <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
-                            <div className="mt-1 text-gray-500">
+                            <div className="mt-1 text-gray-500 text-xs sm:text-base">
                               ${item.price}
                             </div>
                           </td>
-                          <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
+                          <td className="whitespace-nowrap px-3 py-5 text-sm sm:text-base text-gray-500">
                             <span className="inline-flex items-center   text-xs font-medium">
                               <input
                                 type="number"
-                                className="w-7 h-7 outline-none border rounded px-6 py-4"
+                                className="w-7 h-7 outline-none border rounded sm:px-6 sm:py-4"
                               />
                             </span>
                           </td>
-                          <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
+                          <td className="whitespace-nowrap px-3 py-5 text-xs sm:text-base text-gray-500">
                             ${item.price}
                           </td>
                         </tr>
@@ -115,11 +115,11 @@ function Cart() {
                   <input
                     type="text"
                     placeholder="Coupon Code"
-                    className="border rounded border-black py-2 px-3 placeholder:text-sm"
+                    className="border rounded border-black sm:py-2 py-1 sm:px-3 px-1 placeholder:text-sm"
                   />
                   <button
                     type="button"
-                    className="rounded bg-[#DB4444] text-white px-11 py-2"
+                    className="rounded bg-[#DB4444] text-white text-xs sm:text-base sm:px-11 px-4 py-2"
                   >
                     Apply Coupon
                   </button>
