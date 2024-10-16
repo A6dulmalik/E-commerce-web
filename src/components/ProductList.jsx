@@ -30,7 +30,7 @@ const ProductList = () => {
 
   return (
     <div className="bg-white w-full">
-      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 place-items-center max-w-full">
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-4 place-items-center max-w-full">
         {loading ? (
           <p>LOADING...</p>
         ) : (

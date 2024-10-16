@@ -106,17 +106,17 @@ const Navbar = () => {
             </div>
             <div className="flex md:gap-4 gap-2">
               <NavLink to="/wishlist" className="relative">
-                <CiHeart fontSize={20} />
+                <CiHeart fontSize={25} />
                 {wishlist.length > 0 && (
-                  <span className="absolute lg:-top-1 md:-top-1.5 top-0.5 lg:-right-2 md:-right-1 right-0 text-xs bg-red-500 text-white rounded-full px-1">
+                  <span className="absolute lg:-top-1 md:-top-1.5 top-0 lg:-right-2 md:-right-1 right-0 text-xs bg-red-500 text-white rounded-full px-1">
                     {wishlist.length}
                   </span>
                 )}
               </NavLink>
-              <NavLink to="/cart">
-                <BsCart3 fontSize={20} />
+              <NavLink to="/cart" className="relative">
+                <BsCart3 fontSize={23} />
                 {cart.length > 0 && (
-                  <span className="absolute md:top-20 top-[4rem] lg:right-[4.6rem] md:right-[.2rem] right-8 text-xs bg-red-500 text-white rounded-full px-1">
+                  <span className="absolute lg:-top-1 md:-top-1.5 top-0 lg:-right-2 md:-right-1 right-0 text-xs bg-red-500 text-white rounded-full px-1">
                     {cart.length}
                   </span>
                 )}

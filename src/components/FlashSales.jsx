@@ -10,9 +10,10 @@ import {
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import AppContext from "./Context/AppContext";
+import { FaHeart } from "react-icons/fa6";
 
 function FlashSales() {
-  const { addToCart } = useContext(AppContext);
+  const { wishlist, handleWishlist, addToCart } = useContext(AppContext);
   const [products, setProducts] = useState([]);
   // const [loading, setLoading] = useState(false);
 
@@ -68,8 +69,15 @@ function FlashSales() {
               className="w-[160px] sm:w-[180px] md:w-[200px] h-[320px] lg:h-[350px] p-2 flex-shrink-0"
             >
               <div className="relative group h-44 w-full border rounded-lg">
-                <div className="absolute right-3 top-3 rounded-xl p-1">
-                  <FaRegHeart />
+                <div
+                  className="absolute right-3 top-3 rounded-xl p-1"
+                  onClick={() => handleWishlist(product)}
+                >
+                  {wishlist.some((item) => item.id === product.id) ? (
+                    <FaHeart className="text-red-500" /> // Filled heart for wishlist
+                  ) : (
+                    <FaRegHeart className="text-gray-500" /> // Outlined heart if not in wishlist
+                  )}
                 </div>
                 <div className="absolute right-3 top-10 rounded-xl p-1">
                   <FaRegEye />
