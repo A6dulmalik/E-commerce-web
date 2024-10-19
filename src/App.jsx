@@ -23,7 +23,7 @@ import loginAction from "./Services/Login";
 
 function App() {
   const ProtectedRoute = ({ children }) => {
-    const isAuthenticated = localStorage.getItem("user"); // Replace with sessionStorage if needed
+    const isAuthenticated = sessionStorage.getItem("user"); // Replace with sessionStorage if needed
 
     if (!isAuthenticated) {
       return <Navigate to="/login" replace />;

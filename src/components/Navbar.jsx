@@ -10,7 +10,7 @@ import { CiHeart } from "react-icons/ci";
 import { BsCart3 } from "react-icons/bs";
 
 const navigation = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "/home" },
   { name: "Contact", href: "/contact" },
   { name: "About", href: "/about" },
   { name: "Sign Up", href: "/signup" },
