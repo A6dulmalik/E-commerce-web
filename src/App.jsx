@@ -1,7 +1,7 @@
 import { AppProvider } from "./components/Context/AppContext";
 import {
   createBrowserRouter,
-  redirect,
+  Navigate,
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
@@ -18,58 +18,18 @@ import SignUp from "./Pages/SignUp";
 import NotFoundPage from "./Pages/NotFoundPage";
 import Login from "./Pages/Login";
 import Account from "./Pages/Account";
+import signUpAction from "./Services/SignUp";
+import loginAction from "./Services/Login";
 
 function App() {
-  //SignUp function
-  const signUpAction = async ({ request }) => {
-    const data = await request.formData();
+  const ProtectedRoute = ({ children }) => {
+    const isAuthenticated = localStorage.getItem("user"); // Replace with sessionStorage if needed
 
-    const user = {
-      email: data.get("email"),
-      password: data.get("password"),
-    };
-
-    // Storing user in session storage for accessibility during login
-    sessionStorage.setItem("user", JSON.stringify(user));
-
-    // Email validation constant (Note the case-insensitivity with the 'i' flag)
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-
-    // Separate email validation check
-    if (!emailRegex.test(user.email)) {
-      return { error: "Invalid email address" };
+    if (!isAuthenticated) {
+      return <Navigate to="/login" replace />;
     }
 
-    // Separate password validation check
-    if (user.password.length < 6) {
-      return { error: "At least 6 characters long" };
-    }
-
-    // Redirect to login if both validations pass
-    return redirect("/login");
-  };
-
-  //Login function
-  const loginAction = async ({ request }) => {
-    const data = await request.formData();
-    // console.log(data);
-
-    const submission = {
-      email: data.get("email"),
-      password: data.get("password"),
-    };
-
-    const checkUser = JSON.parse(sessionStorage.getItem("user"));
-
-    if (submission.email !== checkUser.email) {
-      return { error: "Please check the email address" };
-    }
-
-    if (submission.password !== checkUser.password) {
-      return { error: "Wrong password" };
-    }
-
-    return redirect("/home");
+    return children;
   };
 
   const router = createBrowserRouter([
@@ -104,11 +64,19 @@ function App() {
         },
         {
           path: "/account",
-          element: <Account />,
+          element: (
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/products",
-          element: <Products />,
+          element: (
+            <ProtectedRoute>
+              <Products />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/item/:id",
@@ -116,7 +84,11 @@ function App() {
         },
         {
           path: "/cart",
-          element: <Cart />,
+          element: (
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          ),
           children: [
             {
               path: "checkout",
@@ -130,7 +102,11 @@ function App() {
         },
         {
           path: "/wishlist",
-          element: <WishList />,
+          element: (
+            <ProtectedRoute>
+              <WishList />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "*",
