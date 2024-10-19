@@ -6,7 +6,7 @@ export const SignUp = () => {
   const data = useActionData();
   return (
     <>
-      <div className="mt-48 sm:mt-36 sm:mb-20 mb-10 max-w-7xl 2xl:m-auto border border-red-500 flex flex-row-reverse items-center gap-32 font-inter sm:bg-none bg-[url('./assets/loginSideImage.svg')] bg-contain">
+      <div className="mt-48 sm:mt-36 sm:mb-20 mb-10 max-w-7xl 2xl:m-auto  flex flex-row-reverse items-center gap-32 font-inter sm:bg-none bg-[url('./assets/loginSideImage.svg')] bg-contain">
         {/* sideImage */}
         <div className="w-2/4 h-2/4 2xl:w-full sm:block hidden">
           <img src={sideImage} />
