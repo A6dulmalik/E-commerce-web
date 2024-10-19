@@ -1,8 +1,9 @@
 // import React from "react";
-import { Form, NavLink, useActionData } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
 import sideImage from "../assets/loginSideImage.svg";
+// import { data } from "autoprefixer";
 
-export const SignUp = () => {
+const Login = () => {
   const data = useActionData();
   return (
     <>
@@ -14,14 +15,14 @@ export const SignUp = () => {
         <div className=" sm:w-[300px] w-4/5 m-auto border border-white rounded sm:block flex flex-col justify-center items-center sm:text-start text-center h-max lg:px-0 px-6 lg:py-0 py-8 my-4 sm:backdrop-blur-none backdrop-blur-sm">
           <div className="mb-8">
             <h1 className="font-medium lg:text-3xl text-xl mb-2 ">
-              Sign Up to Exclusive
+              Login to Exclusive
             </h1>
             <p className="lg:text-base text-sm">
               Enter your{" "}
               <span className="sm:text-black text-white">details below</span>
             </p>
           </div>
-          <Form method="post" action="/" className="">
+          <Form method="post" action="/login" className=" ">
             <div className="w-full mb-10">
               <input
                 type="email"
@@ -30,12 +31,10 @@ export const SignUp = () => {
                 placeholder="Email or Phone Number"
                 className="outline-none border-b w-full placeholder:text-sm sm:placeholder:pl-0 placeholder:pl-2"
               />
-              {data && data.error === "Invalid email address" && (
+              {data && data.error === "Please check the email address" && (
                 <p className="text-[#DB4444] text-xs">{data.error}</p>
               )}
             </div>
-
-            {/* password input */}
             <div className="w-full mb-10">
               <input
                 type="password"
@@ -44,25 +43,18 @@ export const SignUp = () => {
                 placeholder="Password"
                 className="outline-none border-b placeholder:text-sm sm:placeholder:pl-0 placeholder:pl-2"
               />
-              {data && data.error === "At least 6 characters long" && (
+              {data && data.error === "Wrong password" && (
                 <p className="text-[#DB4444] text-xs">{data.error}</p>
               )}
             </div>
-
-            {/* sign-up button */}
             <div className="flex justify-between items-center">
               <button
                 type="submit"
                 className="btn bg-[#DB4444] text-white text-xs sm:px-8 px-4 py-2 sm:py-3 rounded-sm"
               >
-                Sign Up
+                Login
               </button>
-              <NavLink
-                to="/login"
-                className="sm:text-[#DB4444] text-white text-xs"
-              >
-                Have an account?
-              </NavLink>
+              <span className="text-[#DB4444] text-xs ">Forgot Password?</span>
             </div>
           </Form>
         </div>
@@ -71,4 +63,4 @@ export const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;

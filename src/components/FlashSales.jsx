@@ -23,7 +23,7 @@ function FlashSales() {
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
 
-      console.log(data); // Accessing the title of each object
+      // console.log(data); // Accessing the title of each object
       setProducts(data);
       // setLoading(false);
     } catch (error) {

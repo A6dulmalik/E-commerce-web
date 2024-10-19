@@ -4,7 +4,7 @@ import { FaRegEye, FaRegHeart, FaStar } from "react-icons/fa";
 import AppContext from "./Context/AppContext";
 
 function ExplorePro() {
-  const { addToCart, handleWishlist } = useContext(AppContext);
+  const { addToCart } = useContext(AppContext);
 
   const [products, setProducts] = useState([]);
 
@@ -13,7 +13,7 @@ function ExplorePro() {
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
 
-      console.log(data.title); // Accessing the title of each object
+      // console.log(data.title); // Accessing the title of each object
       const limiteItems = data.slice(10, 18);
       setProducts(limiteItems);
     } catch (error) {

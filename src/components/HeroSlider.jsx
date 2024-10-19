@@ -1,10 +1,10 @@
 // import React from "react";
 // import { FaArrowRight } from "react-icons/fa";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+// import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import Apple_logo from "../assets/Apple-01.jpg";
 import iphoneImage from "../assets/iphone14-rbg.png";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -77,7 +77,7 @@ const HeroSlider = () => {
   // const settings = {
   //   dots: true,
   // };
-  const currentIndex = 0;
+  // const currentIndex = 0;
 
   // const next = () => setCurrentIndex(currentIndex + 1);
   // const previous = () => setCurrentIndex(currentIndex - 1);

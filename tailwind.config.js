@@ -13,6 +13,9 @@ export default {
           "scrollbar-width": "none" /* Firefox */,
         },
       },
+      backgroundImage: {
+        signup: "url('../assets/loginSideImage.svg')",
+      },
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
