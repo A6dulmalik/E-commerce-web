@@ -11,13 +11,13 @@ export const AppProvider = ({ children }) => {
       // Check if the product already exists in the wishlist
       const isInWishlist = prevWishlist.some((item) => item.id === product.id);
 
-      // Only add the product if it's not already in the wishlist
-      if (!isInWishlist) {
-        return [...prevWishlist, product]; // Add product to wishlist
+      if (isInWishlist) {
+        // If the product is already in the wishlist, remove it
+        return prevWishlist.filter((item) => item.id !== product.id);
+      } else {
+        // If the product is not in the wishlist, add it
+        return [...prevWishlist, product];
       }
-
-      // If the product is already in the wishlist, return the list as is
-      return prevWishlist;
     });
   };
 
